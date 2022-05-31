@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontSize": 16,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+}
