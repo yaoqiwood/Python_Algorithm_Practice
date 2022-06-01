@@ -1,12 +1,25 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"editor.fontSize": 16,
-		"editor.formatOnSave": true,
-		"editor.formatOnType": true
-	},
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.fontSize": 16,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.autoSave": "off",
+    "pythonIndent.useTabOnHangingIndent": true,
+    "python.linting.pylintArgs": [
+      "--indent-string='  '"
+    ],
+    "python.formatting.autopep8Args": [
+      "--indent-size=2"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "autopep8"
+  },
 }
