@@ -5,6 +5,13 @@ class ListNode(object):
     self.next = None
 
 
+def traverseRead(linkListNode):
+  tempList = linkListNode
+  while tempList:
+    print(tempList.val)
+    tempList = tempList.next
+
+
 class Solution(object):
   def addTwoNumbers(self, l1, l2):
     # define a array
@@ -32,26 +39,35 @@ class OtherSolution(object):
     :type l2: ListNode
     :rtype: ListNode
     """
-    result = ListNode(0)
-    result_tail = result
-    carry = 0
+    resultList = ListNode(0)
+    tempNodeList = resultList
+    temp = 0
+    out = 0
+    while l1 or l2:
+      val1 = l1.val if l1 else 0
+      val2 = l2.val if l2 else 0
+      out, temp = divmod(val1 + val2 + out, 10)
+      tempNodeList.val = temp
+      tempNodeList.next = ListNode(out) if (
+          out > 0 or ((l1 and l1.next is not None) or (l2 and l2.next is not None))) else None
+      tempNodeList = tempNodeList.next
 
-    while l1 or l2 or carry:
-      val1 = (l1.val if l1 else 0)
-      val2 = (l2.val if l2 else 0)
-      carry, out = divmod(val1+val2 + carry, 10)
+      l1 = l1.next if l1 is not None else None
+      l2 = l2.next if l2 is not None else None
 
-      result_tail.next = ListNode(out)
-      result_tail = result_tail.next
-
-      l1 = (l1.next if l1 else None)
-      l2 = (l2.next if l2 else None)
-
-    return result.next
+    return resultList
 
 
-l1 = [9, 9, 9, 9, 9, 9, 9]
-l2 = [9, 9, 9, 9]
+# l1 = [9, 9, 9, 9, 9, 9, 9]
+# l2 = [9, 9, 9, 9]
+l1 = ListNode(9)
+l1.next = ListNode(9)
+l1.next.next = ListNode(1)
+
+l2 = ListNode(9)
+# l2.next = ListNode(6)
+# l2.next.next = ListNode(4)
+# l1.traverseRead()
 
 solution = OtherSolution()
-print(solution.addTwoNumbers(l1, l2))
+traverseRead(solution.addTwoNumbers(l1, l2))
