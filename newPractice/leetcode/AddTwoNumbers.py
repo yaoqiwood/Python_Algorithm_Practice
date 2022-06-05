@@ -50,8 +50,12 @@ class OtherSolution(object):
     return result.next
 
 
-l1 = [9, 9, 9, 9, 9, 9, 9]
-l2 = [9, 9, 9, 9]
+# l1 = [9, 9, 9, 9, 9, 9, 9]
+# l2 = [9, 9, 9, 9]
+l1 = ListNode(9)
+l1.next = ListNode(9)
+l1.next = ListNode(9)
+print(l1)
 
-solution = OtherSolution()
-print(solution.addTwoNumbers(l1, l2))
+# solution = OtherSolution()
+# print(solution.addTwoNumbers(l1, l2))

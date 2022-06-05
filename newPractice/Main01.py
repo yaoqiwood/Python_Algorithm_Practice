@@ -13,7 +13,7 @@ class Solution:
       remaining = target - nums[i]  # 2
 
       if remaining in seen:  # 3
-        return [i, seen[remaining]]  # 4
+        return sorted([i, seen[remaining]])  # 4
       else:
         seen[value] = i  # 5
 
