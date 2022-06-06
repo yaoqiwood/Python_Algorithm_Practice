@@ -38,6 +38,30 @@ class Solution(object):
     return ans
 
 
-strN = "tmmzuxt"
-solution = Solution()
+class NewSolution(object):
+  def lengthOfLongestSubstring(self, s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    ans = 0
+    i = 0
+    temp = {}
+    # traverse the array
+    for j in range(len(s)):
+      if s[j] in temp:
+        i = max(temp[s[j]], i)
+      temp[s[j]] = j+1
+      ans = max(j-i + 1, ans)
+    print(ans)
+    return ans
+
+
+# strN = "tmmzuxt"
+# strN = "pwwkew"
+# strN = "abcabcbb"
+# strN = " "
+strN = "abba"
+# strN = "au"
+solution = NewSolution()
 solution.lengthOfLongestSubstring(strN)
