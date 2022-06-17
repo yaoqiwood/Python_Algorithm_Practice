@@ -51,17 +51,33 @@ class NewSolution(object):
     for j in range(len(s)):
       if s[j] in temp:
         i = max(temp[s[j]], i)
-      temp[s[j]] = j+1
-      ans = max(j-i + 1, ans)
-    print(ans)
+      temp[s[j]] = j
+      ans = max(j-i, ans)
+    print(ans+1)
+    return ans+1
+
+
+class PracticeSolution:
+  def lengthOfLongestSubstring(self, s):
+    i = 0
+    ans = 0
+    temp = {}
+    for j in range(len(s)):
+      if s[j] in temp:
+        i = max(temp[s[j]], i)
+      temp[s[j]] = j + 1
+      ans = max(j - i + 1, ans)
+      print(ans)
     return ans
 
 
 # strN = "tmmzuxt"
 # strN = "pwwkew"
 # strN = "abcabcbb"
+strN = "abcabcbb"
+
 # strN = " "
-strN = "abba"
+# strN = "abba"
 # strN = "au"
-solution = NewSolution()
+solution = PracticeSolution()
 solution.lengthOfLongestSubstring(strN)
